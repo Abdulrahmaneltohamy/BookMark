@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BookMark</title>
+  <!--  google Fonts link -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=PT+Sans+Caption:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <!--  others links >>(bootstrap & css & fontawesome) -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/all.min.css">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+
+  <main>
+    <div class="container py-5">
+      <h1 class="text-center py-2 mx-auto">Bookmarker</h1>
+      <div class="bookmark-input mt-5 py-4 p-3">
+        <h2 class="text-center py-3">
+          <i class="fa-solid fa-bookmark"></i>
+          Bookmark your favorite sites
+          <i class="fa-solid fa-bookmark"></i>
+        </h2>
+
+        <!-- sites name and url input -->
+        <div class="site-name mb-3">
+          <label for="bookMarkName" class="pb-2 fw-semibold">
+            <i class="fa-solid fa-book-bookmark pe-2"></i>Site Name
+          </label>
+          <input type="text" class="form-control" id="bookmarkName" placeholder="Bookmark Name">
+        </div>
+        <div class="site-url fw-semibold">
+          <label for="bookMarkUrl" class="pb-2">
+            <i class="fa-solid fa-link pe-2"></i>Site URL
+          </label>
+          <input type="url" class="form-control" id="bookmarkUrl" placeholder="Website URL">
+        </div>
+
+        <div class="text-center mt-4 mb-4">
+          <button onclick="addData()" class="btn px-5" id="btnSubmit">Submit</button>
+        </div>
+      </div>
+
+      <!-- search and sites teable -->
+      <div>
+        <input oninput="searchData()" type="search" id="searchInput" class="form-control mt-4 w-75 m-auto"
+          placeholder="Search With Site Name">
+      </div>
+
+      <table class="table text-center mt-4">
+        <thead>
+          <tr>
+            <th>Index</th>
+            <th>Website Name</th>
+            <th>Visit</th>
+            <th>Delete</th>
+          </tr>
+        </thead>
+        <tbody id="tableData">
+
+        </tbody>
+      </table>
+    </div>
+
+  </main>
+
+
+
+
+
+
+
+
+
+
+
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+
+</html>
