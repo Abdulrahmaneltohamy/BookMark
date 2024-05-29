@@ -6,10 +6,11 @@
 
 body {
     font-family: var(--body-font);
+    background-color: #F7ECDE;
 }
 
-main {
-    background-color: #F7ECDE;
+th , td {
+    max-width: min-content;
 }
 
 main .container h1 {
