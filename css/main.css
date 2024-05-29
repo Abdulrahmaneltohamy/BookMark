@@ -39,7 +39,7 @@ main h1:hover::before {
 
 h2 {
     font-family: var(--subheader-font);
-    font-size: 1.5625rem;
+    font-size: 21px;
     background-image: linear-gradient(to left, #3ca55c, #b5ac49);
     background-clip: text;
     -webkit-text-fill-color: transparent;
