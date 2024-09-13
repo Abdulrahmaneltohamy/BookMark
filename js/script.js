@@ -12,17 +12,28 @@ if (localStorage.getItem("bookmarkDataContainer") !== null) {
 };
 
 
-// creat data & push it on array and localstorage
-function addData() {
-    siteData = {
-        siteName: bookmarkNameInput.value,
-        siteUrl: bookmarkUrlInput.value,
-    }
 
-    siteDataList.push(siteData);
-    clearForm();
-    displayData();
-    localStorage.setItem("bookmarkDataContainer", JSON.stringify(siteDataList));
+// creat data & push it on array and localstorage & validation input
+function addData() {
+    if (
+        validateName() == true &&
+        validateUrl() == true
+    ) {
+        siteData = {
+            siteName: bookmarkNameInput.value,
+            siteUrl: bookmarkUrlInput.value,
+        }
+
+        siteDataList.push(siteData);
+        clearForm();
+        displayData();
+        localStorage.setItem("bookmarkDataContainer", JSON.stringify(siteDataList));
+
+        document.getElementById("messageSubmit").innerHTML = "";
+    }
+    else {
+        document.getElementById("messageSubmit").innerHTML = "please Fill out the fields correctly"
+    }
 };
 
 // clear form
@@ -74,4 +85,50 @@ function searchData() {
         }
     }
     document.getElementById("tableData").innerHTML = cartona;
+}
+
+
+
+
+// validation input
+
+function validateName() {
+    var text = bookmarkNameInput.value;
+    var regex = /^[A-Z]{3,20}$/i
+
+    var messageInputName = document.getElementById("messageName")
+
+    if (regex.test(text) == true) {
+        bookmarkNameInput.classList.remove("is-invalid");
+        bookmarkNameInput.classList.add("is-valid");
+        messageInputName.classList.add("d-none");
+        return true;
+    }
+    else {
+        bookmarkNameInput.classList.add("is-invalid");
+        bookmarkNameInput.classList.remove("is-valid");
+        messageInputName.classList.remove("d-none");
+        return false;
+    }
+}
+
+
+function validateUrl() {
+    var text = bookmarkUrlInput.value;
+    var regex = /^https?:\/\/(www\.)[a-zA-Z0-9-]+\.[a-zA-Z]{2,}(\/[^\s]*)?$/i;
+
+    var messageInputUrl = document.getElementById("messageUrl");
+
+    if (regex.test(text) == true) {
+        bookmarkUrlInput.classList.remove("is-invalid");
+        bookmarkUrlInput.classList.add("is-valid");
+        messageInputUrl.classList.add("d-none");
+        return true;
+    }
+    else {
+        bookmarkUrlInput.classList.add("is-invalid");
+        bookmarkUrlInput.classList.remove("is-valid");
+        messageInputUrl.classList.remove("d-none");
+        return false;
+    }
 }

@@ -34,17 +34,22 @@
           <label for="bookMarkName" class="pb-2 fw-semibold">
             <i class="fa-solid fa-book-bookmark pe-2"></i>Site Name
           </label>
-          <input type="text" class="form-control" id="bookmarkName" placeholder="Bookmark Name">
+          <input oninput="validateName()" type="text" class="form-control" id="bookmarkName"
+            placeholder="Bookmark Name">
+          <p id="messageName" class="alert alert-danger fw-semibold d-none">Enter a minimum of 3 characters and 20 as a
+            maximum </p>
         </div>
         <div class="site-url fw-semibold">
           <label for="bookMarkUrl" class="pb-2">
             <i class="fa-solid fa-link pe-2"></i>Site URL
           </label>
-          <input type="url" class="form-control" id="bookmarkUrl" placeholder="Website URL">
+          <input oninput="validateUrl()" type="url" class="form-control" id="bookmarkUrl" placeholder="Website URL">
+          <p id="messageUrl" class="alert alert-danger d-none"> Please Entert a valid Url Start With https:// </p>
         </div>
 
         <div class="text-center mt-4 mb-4">
           <button onclick="addData()" class="btn px-5" id="btnSubmit">Submit</button>
+          <p id="messageSubmit" class="text-danger mt-2 fw-bold"></p>
         </div>
       </div>
 
