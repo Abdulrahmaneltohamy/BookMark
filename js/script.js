@@ -30,6 +30,8 @@ function addData() {
         localStorage.setItem("bookmarkDataContainer", JSON.stringify(siteDataList));
 
         document.getElementById("messageSubmit").innerHTML = "";
+        bookmarkNameInput.classList.remove("is-valid");
+        bookmarkUrlInput.classList.remove("is-valid");
     }
     else {
         document.getElementById("messageSubmit").innerHTML = "please Fill out the fields correctly"
