@@ -117,7 +117,7 @@ function validateName() {
 
 function validateUrl() {
     var text = bookmarkUrlInput.value;
-    var regex = /^https?:\/\/(www\.)[a-zA-Z0-9-]+\.[a-zA-Z]{2,}(\/[^\s]*)?$/i;
+    var regex = /^https?:\/\/[^\s]+$/i;
 
     var messageInputUrl = document.getElementById("messageUrl");
 
